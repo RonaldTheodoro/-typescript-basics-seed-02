@@ -1,7 +1,5 @@
-let coupon: any;
+const implicitCoupon = 'pizza25';
+const explicitCoupon: string = 'pizza25';
 
-coupon = 'PIZZA25';
-console.log(coupon);
-
-coupon = 25;
-console.log(coupon);
+console.log(implicitCoupon);
+console.log(explicitCoupon);
