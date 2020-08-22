@@ -23,7 +23,7 @@
   "author": "Ultimate Angular",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/UltimateAngular/typescript-basics-seed/issues"
+    "url": "git+https://github.com/RonaldTheodoro/-typescript-basics-seed-02.git/issues"
   },
-  "homepage": "https://github.com/UltimateAngular/typescript-basics-seed#readme"
+  "homepage": "git+https://github.com/RonaldTheodoro/-typescript-basics-seed-02.git#readme"
 }
