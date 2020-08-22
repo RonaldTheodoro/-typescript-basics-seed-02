@@ -1,8 +1,7 @@
-function sumAll(msg: string, ...arr: number[]) {
-  console.log(msg);
-  return arr.reduce((prev, next) => prev + next);
-}
+const toppings = ['bacon', 'chilli'];
 
-const sum = sumAll('xelo', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+const newTopppings = ['pepperoni'];
 
-console.log(sum);
+const allToppings = [...toppings, ...newTopppings];
+
+console.log(allToppings);
