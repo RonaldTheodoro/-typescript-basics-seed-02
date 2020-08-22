@@ -1,18 +1,10 @@
-const pizza = {
-  name: 'Pepperoni',
-  toppings: ['pepperoni'],
-};
+const pizzaCost: number = 10;
+const pizzaToopings: number = 5;
 
-function order({ name, toppings }) {
-  return { name, toppings };
+function calculatePrice(cost: number, toopings: number): number {
+  return cost + 1.5 * toopings;
 }
 
-const { name } = order(pizza);
+const cost: number = calculatePrice(pizzaCost, pizzaToopings);
 
-console.log(name);
-
-const toppings = ['pepperoni', 'bacon', 'chilli'];
-
-const [first, ...second] = toppings;
-
-console.log(first, second);
+console.log(`Pizza costs: ${cost}`);
