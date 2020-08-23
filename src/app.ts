@@ -1,47 +1,10 @@
-// eslint-disable-next-line max-classes-per-file
-interface ISizes {
-  availableSizes: string[];
-}
+class Coupon {
+  static allowed = ['Pepperoni', 'Blazing Inferno'];
 
-abstract class Sizes implements ISizes {
-  constructor(protected sizes: string[]) { }
-
-  set availableSizes(sizes: string[]) {
-    this.sizes = sizes;
-  }
-
-  get availableSizes(): string[] {
-    return this.sizes;
+  static create(percentage: number): string {
+    return `PIZZA_RESTAURANT_${percentage}`;
   }
 }
 
-interface IPizza extends ISizes {
-  readonly name: string;
-  toppings: string[];
-  updateSizes(sizes: string[]): void;
-  addTopping(topping: string): void;
-}
-
-class Pizza extends Sizes implements IPizza {
-  toppings: string[] = [];
-
-  constructor(readonly name: string, sizes: string[]) {
-    super(sizes);
-  }
-
-  updateSizes(sizes: string[]) {
-    this.sizes = sizes;
-  }
-
-  addTopping(topping: string) {
-    this.toppings.push(topping);
-  }
-}
-
-const pizza = new Pizza('Pepperoni', ['small', 'medium']);
-
-console.log(pizza.availableSizes);
-
-pizza.updateSizes(['large']);
-
-console.log(pizza.availableSizes);
+console.log(Coupon.allowed);
+console.log(Coupon.create(25));
