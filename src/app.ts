@@ -1,5 +1,9 @@
 // eslint-disable-next-line max-classes-per-file
-abstract class Sizes {
+interface ISizes {
+  availableSizes: string[];
+}
+
+abstract class Sizes implements ISizes {
   constructor(protected sizes: string[]) { }
 
   set availableSizes(sizes: string[]) {
@@ -11,14 +15,21 @@ abstract class Sizes {
   }
 }
 
-class Pizza extends Sizes {
+interface IPizza extends ISizes {
+  readonly name: string;
+  toppings: string[];
+  updateSizes(sizes: string[]): void;
+  addTopping(topping: string): void;
+}
+
+class Pizza extends Sizes implements IPizza {
   toppings: string[] = [];
 
   constructor(readonly name: string, sizes: string[]) {
     super(sizes);
   }
 
-  set updateSizes(sizes: string[]) {
+  updateSizes(sizes: string[]) {
     this.sizes = sizes;
   }
 
@@ -31,6 +42,6 @@ const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 
 console.log(pizza.availableSizes);
 
-pizza.updateSizes = ['large'];
+pizza.updateSizes(['large']);
 
 console.log(pizza.availableSizes);
