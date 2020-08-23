@@ -11,23 +11,19 @@ class Sizes {
   }
 }
 
-const sizes = new Sizes(['small', 'medium']);
-
-console.log(sizes.availableSizes);
-sizes.availableSizes = ['medium', 'large'];
-console.log(sizes.availableSizes);
-
-class Pizza {
+class Pizza extends Sizes {
   toppings: string[] = [];
 
-  constructor(readonly name: string) { }
+  constructor(readonly name: string, public sizes: string[]) {
+    super(sizes);
+  }
 
   addTopping(topping: string) {
     this.toppings.push(topping);
   }
 }
 
-const pizza = new Pizza('Pepperoni');
+const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 
 pizza.addTopping('pepperoni');
 
